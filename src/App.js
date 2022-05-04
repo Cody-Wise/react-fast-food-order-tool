@@ -1,22 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import OrderNameInput from './OrderNameInput';
+import OrderImages from './OrderImages';
+import Dropdown from './Dropdown';
+import FormInstruction from './FormInstruction';
+import InstructionsList from './InstructionsList';
 
 function App() {
+  const [foodId, setFoodId] = useState('');
+  const [sideId, setSideId] = useState('');
+  const [drinkId, setDrinkId] = useState('');
+  const [instructions, setInstructions] = useState(['plain', 'large size']);
+  const [formInstruction, setformInstruction] = useState('');
+  const [ordername, setOrderName] = useState('___');
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    setInstructions([...instructions, formInstruction]);
+    setformInstruction('');
+  }
   return (
     <div className="App">
+      <div className="order">
+        <h1>Welcome to Roadkill Cafe</h1>
+        <OrderNameInput setOrderName={setOrderName} />
+        <Dropdown setFoodId={setFoodId} setDrinkId={setDrinkId} setSideId={setSideId} />
+        <FormInstruction
+          formInstruction={formInstruction}
+          handleSubmit={handleSubmit}
+          setformInstruction={setformInstruction}
+        />
+      </div>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h2>Welcome {ordername} your order is:</h2>
+        <OrderImages foodId={foodId} sideId={sideId} drinkId={drinkId} />
+        <InstructionsList instructions={instructions} />
       </header>
     </div>
   );
