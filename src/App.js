@@ -34,7 +34,7 @@ function App() {
         />
       </div>
       <header className="App-header">
-        Welcome {ordername} your order is:
+        <h2>Welcome {ordername} your order is:</h2>
         <OrderImages foodId={foodId} sideId={sideId} drinkId={drinkId} />
         <InstructionsList instructions={instructions} />
       </header>
