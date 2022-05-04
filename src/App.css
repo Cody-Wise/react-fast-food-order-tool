@@ -1,3 +1,8 @@
+html {
+  margin: 0px;
+  padding: 0px;
+}
+
 .App {
   text-align: center;
 }
@@ -24,6 +29,14 @@
   color: white;
 }
 
+.App {
+  height: 500px;
+}
+
+h1 {
+  margin: 0px;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -32,6 +45,36 @@
   margin-top: 50px;
   display: flex;
   flex-direction: column;
+}
+
+.dropdowns {
+  margin-right: 5px;
+}
+
+.form {
+  margin-bottom: 15px;
+}
+
+.food-image1 {
+  margin-bottom: 10px;
+  border: 5px solid black;
+  max-height: 200px;
+}
+
+.food-image2 {
+  margin-bottom: 10px;
+  border: 5px solid black;
+  max-height: 200px;
+}
+
+.food-image3 {
+  border: 5px solid black;
+  max-height: 200px;
+}
+
+.order {
+  background: red;
+  height: 200px;
 }
 
 @keyframes App-logo-spin {

@@ -4,7 +4,7 @@ export default function Dropdown({ setFoodId, setDrinkId, setSideId }) {
   return (
     <div>
       <div>
-        Select Your Food
+        <span className="dropdowns">Select Your Food</span>
         <select onChange={(e) => setFoodId(e.target.value)}>
           <option value="0">Select</option>
           <option value="1">Burger</option>
@@ -13,7 +13,7 @@ export default function Dropdown({ setFoodId, setDrinkId, setSideId }) {
         </select>
       </div>
       <div>
-        Select Your Side
+        <span className="dropdowns">Select Your Side</span>
         <select onChange={(e) => setSideId(e.target.value)}>
           <option value="0">Select</option>
           <option value="1">Mozzarella Sticks</option>
@@ -22,7 +22,7 @@ export default function Dropdown({ setFoodId, setDrinkId, setSideId }) {
         </select>
       </div>
       <div>
-        Select Your Drink
+        <span className="dropdowns">Select Your Drink</span>
         <select onChange={(e) => setDrinkId(e.target.value)}>
           <option value="0">Select</option>
           <option value="1">Ice Tea</option>
